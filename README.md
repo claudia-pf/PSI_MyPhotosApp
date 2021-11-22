@@ -20,8 +20,8 @@ $ ng serve -o
 
 Autores:
 
-Catarina Fernandes
-Cláudia Ferreira
-José Almeida
-Kethlen Salviano
+Catarina Fernandes<br/>
+Cláudia Ferreira<br/>
+José Almeida<br/>
+Kethlen Salviano<br/>
 Maria Silva
