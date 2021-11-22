@@ -1,0 +1,1 @@
+DEBUG=backend:* & npm run devstart

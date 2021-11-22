@@ -1,0 +1,12 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<app-top-nav-menu></app-top-nav-menu>
+<div class="body text-center">
+    <form class="form-signin">
+        <img class="mb-4" src="assets/logo.png" alt="" width="80%">
+        <h1 class="h3 mb-3 font-weight-normal">Entrar</h1>
+        <input type="text" name="inputNick" class="form-control" placeholder="Nickname" required autofocus [(ngModel)]="nickname" (keyup)="isFormValid()">
+        <input type="password" name="inputPassword" class="form-control" placeholder="Password" required [(ngModel)]="password" (keyup)="isFormValid()">
+        <button class="btn btn-lg btn-block w-100 mb-3" type="button" (click)="login()" [disabled]="!isValid">Submeter</button>
+        <a routerLink="/signup">Registar</a>
+    </form>
+</div>

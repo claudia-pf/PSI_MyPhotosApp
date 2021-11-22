@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~angular-notifier/styles.css";
+
+html, body{
+    height: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn{
+    background-color: #6209D9;
+    color: white;
+}
+
+.btn:hover{
+    opacity: 0.9;
+    color: white;
+}

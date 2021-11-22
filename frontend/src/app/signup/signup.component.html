@@ -1,0 +1,21 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<app-top-nav-menu></app-top-nav-menu>
+<div class="body text-center">
+    <form class="form-signin">
+        <img class="mb-4" src="assets/logo.png" alt="" width="80%">
+        <h1 class="h3 mb-3 font-weight-normal">Registar</h1>
+        <input type="text" name="inputNick" class="form-control" placeholder="Nickname" required (keyup)="validatePassword()" [(ngModel)]="nickname">
+        <input type="password" name="inputPassword" class="form-control" placeholder="Password" required (keyup)="validatePassword()" [(ngModel)]="password">
+        <div class="password-check text-muted small">
+            <p>A password deve ter:</p>
+            <ul>
+                <li [class]="haveChar ? 'check-green':'check-red'"><span>{{haveChar ? '&#10003;' : '&#10005;'}}</span> 8 ou mais carateres</li>
+                <li [class]="haveUpperCase ? 'check-green':'check-red'"><span>{{haveUpperCase ? '&#10003;' : '&#10005;'}}</span> pelo menos uma letra maiúscula</li>
+                <li [class]="haveLowerCase ? 'check-green':'check-red'"><span>{{haveLowerCase ? '&#10003;' : '&#10005;'}}</span> pelo menos uma letra minúscula</li>
+                <li [class]="haveNumber ? 'check-green':'check-red'"><span>{{haveNumber ? '&#10003;' : '&#10005;'}}</span> um algarismo</li>
+            </ul>
+        </div>
+        <button class="btn btn-lg btn-block w-100 mb-3" type="button" (click)="submit()" [disabled]="!isValid">Submeter</button>
+        <a routerLink="/login">Entrar</a>
+    </form>
+</div>

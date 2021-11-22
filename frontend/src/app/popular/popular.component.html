@@ -1,0 +1,68 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<app-top-nav-menu></app-top-nav-menu>
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <img class="mb-4" src="assets/logo.png" alt="logo MyPhotos" width="80%">
+        <h1 class="fw-light">{{ title }}</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="album py-5 bg-light">
+    <div class="container text-center">
+     <a class="lead text-muted" *ngIf="!hasPhotos" routerLink="/MyPhotos/upload">
+          Seja o primeiro a publicar uma foto!
+     </a>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let photo of photosPopular">
+          <div class="card mb-4 box-shadow">
+            <!--
+           <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+           -->
+        <figure>
+            <img
+              class="thumbnail"
+              src="{{ photo.photoB64 }}"
+              alt="{{ photo.name }}"
+              (click)="photoClick(photo._id)"
+            />
+            <div class="card-body">
+              <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+              <div class="d-flex justify-content-center align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    (click)="photoClick(photo._id)"
+                  >
+                    Ver
+                  </button>
+                  <!--
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    Gosto
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    Favorito
+                  </button>
+                  -->
+                </div>
+                <!--  <small class="text-muted"> gostos</small> -->
+              </div>
+            </div>
+            </figure>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

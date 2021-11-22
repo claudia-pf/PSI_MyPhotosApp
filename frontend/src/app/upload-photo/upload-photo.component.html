@@ -1,0 +1,67 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<app-top-nav-menu></app-top-nav-menu>
+<div class="body text-center">
+
+  <div class="form-upload" id="up">
+    <button
+    id="voltar"
+    class="btn"
+    type="button"
+    (click)="goBack()"
+  >     ← 
+    
+  </button>
+    <h1 class="h3 mb-3 font-weight-normal">Publicar foto</h1>
+    <hr />
+    <textarea
+      #name
+      id="input-name"
+      class="form-control"
+      placeholder="Nome"
+      [(ngModel)]="role"
+      [maxlength]="maxName"
+    >
+    </textarea>
+    <label class="counter"> {{role.length}}/{{maxName}}</label>
+
+    <textarea
+      #description
+      id="input-description"
+      class="form-control"
+      placeholder="Descrição"
+      [(ngModel)]="role2"
+      [maxlength]="maxDescription"
+    >
+    </textarea>
+    <label class="counter"> {{role2.length}}/{{maxDescription}}</label>
+<br>
+    <div class="btn btn-primary btn-file">
+      Escolher foto...
+      <input
+      id="input-photo"
+      type="file"
+      accept="image/*"
+      (input)="previewFile($event)"
+    />
+    </div>
+      <br>
+      <img id="photo" class="img" />
+    <br>
+
+    <button *ngIf="!uploadClicked"
+      class="btn"
+      type="button"
+      (click)="tryUpload(name.value, description.value)"
+      [disabled]="!isValid"
+    >
+      Publicar
+    </button>
+    <div *ngIf="uploadClicked && !hasDescription">
+      <small>Tem a certeza que pretende publicar esta foto sem descrição?</small> 
+      <br>
+      <button class="btn mr-2 btn-red" type="button" (click)="changeToNotClicked()">Não</button>&nbsp;
+      <button class="btn ml-1" type="button" (click)="upload(name.value, description.value)" >Sim</button>
+    </div>
+
+  </div>
+</div>
