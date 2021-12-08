@@ -2,7 +2,7 @@
 
 Trabalho realizado em contexto académico para a UC Projeto de Sistemas de Informação.
 
-## Run BackEnd
+### Run Backend:
 ```
 $ cd backend
 $ npm install
@@ -10,7 +10,7 @@ $ SET DEBUG=backend:* & npm run devstart
 $ DEBUG=backend:* & npm run devstart (MAC/Linux)
 ```
 
-## Run FrontEnd
+### Run Frontend:
 ```
 $ cd frontend
 $ npm install
@@ -18,8 +18,7 @@ $ ng serve -o
 ```
 
 
-Autores:
-
+Autores:<br/>
 Catarina Fernandes<br/>
 Cláudia Ferreira<br/>
 José Almeida<br/>
